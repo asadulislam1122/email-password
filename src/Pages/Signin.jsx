@@ -39,6 +39,20 @@ const Signin = () => {
       });
   };
   console.log(user);
+
+  // google ()
+  const handleGoogleAccount = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result);
+        setUser(result.user);
+        toast.success("Continue with Google Sign In");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   const signOutButton = () => {
     signOut(auth)
       .then(() => {
@@ -51,17 +65,7 @@ const Signin = () => {
         toast.error(error.message);
       });
   };
-  // google ()
-  const handleGoogleAccount = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        console.log(result);
-        toast.success("Continue with Google Sign In");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
-  };
+
   return (
     <div className=" mx-auto bg-gradient-to-r from-pink-400 via-green-500 to-orange-500 hero min-h-screen">
       <div className="md:flex  gap-20 items-center m-8 ">
@@ -133,8 +137,9 @@ const Signin = () => {
                     <div className="h-[1px]  w-16 bg-gray-600"></div>
                   </div>
                   {/* google */}
-                  <div onClick={handleGoogleAccount} className="flex">
+                  <div className="flex">
                     <button
+                      onClick={handleGoogleAccount}
                       type="button"
                       className="btn bg-gradient-to-r from-blue-500 to-orange-500 mx-auto text-center justify-center items-center m-auto"
                     >

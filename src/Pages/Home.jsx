@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-pink-500 via-purple-500 to-orange-400 text-center">
-      <h1 className="text-5xl md:text-6xl font-bold text-white animate-bounce drop-shadow-lg">
+      <h1 className="text-2xl md:text-6xl font-bold text-white animate-bounce drop-shadow-lg">
         🚀 Homepage is Coming Soon
       </h1>
 
