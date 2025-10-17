@@ -29,7 +29,12 @@ const SignUp = () => {
         toast.success("signUp Sucesfully");
       })
       .catch((error) => {
-        toast.error(error.message);
+        console.log(error.code);
+        if (error.code === "auth/email-already-in-use") {
+          toast.error("এই ইমেইল দিয়ে ইতিমধ্যেই একটি একাউন্ট আছে!");
+        } else {
+          console.log(error.message);
+        }
       });
   };
   return (
